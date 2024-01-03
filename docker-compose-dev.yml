@@ -18,7 +18,7 @@ x-common-django:
     db:
       condition: service_healthy
 networks:
-  ckan_network:
+  geonode_network:
     driver: bridge
     ipam:
       config:
@@ -40,7 +40,7 @@ services:
     ports:
       - "8000:8000"
     networks:
-      ckan_network:
+      geonode_network:
         ipv4_address: 172.18.0.2            
 
   # Celery worker that executes celery tasks created by Django.
@@ -61,6 +61,8 @@ services:
     container_name: geoserver4${COMPOSE_PROJECT_NAME}
     env_file:
       - .env
+    environment:
+      - PROXY_BASE_URL=https://8080-maximilianopiza-geonode-nq6mxxmvno5.ws-us107.gitpod.io/geoserver         
     ports:
       - "8080:8080"
     volumes:
@@ -71,7 +73,7 @@ services:
       - tmp:/tmp
     restart: unless-stopped
     networks:
-      ckan_network:
+      geonode_network:
         ipv4_address: 172.18.0.3  
 
   data-dir-conf:
@@ -84,7 +86,7 @@ services:
     healthcheck:
       test: "ls -A '/geoserver_data/data' | wc -l"
     networks:
-      ckan_network:
+      geonode_network:
         ipv4_address: 172.18.0.4        
 
   # PostGIS database.
@@ -105,7 +107,7 @@ services:
     ports:
       - "5432:5432"
     networks:
-      ckan_network:
+      geonode_network:
         ipv4_address: 172.18.0.5        
 
   # Vanilla RabbitMQ service. This is needed by celery

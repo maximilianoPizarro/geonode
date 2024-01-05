@@ -1,3 +1,7 @@
+.. image:: https://gitpod.io/button/open-in-gitpod.svg
+    :target: https://gitpod.io/#https://github.com/maximilianoPizarro/geonode
+    :alt: Open in GitPod
+
 ✔🙌 ✔🙌 ✔🙌 🔭🔭🔭 `Open in GitPod <https://gitpod.io/#https://github.com/maximilianoPizarro/geonode>`_ 🔭🔭🔭 ✔🙌 ✔🙌 ✔🙌 
 
 ![GeoNode](https://raw.githubusercontent.com/GeoNode/documentation/master/about/img/geonode-logo_for_readme.gif "GeoNode")

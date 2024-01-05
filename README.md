@@ -1,6 +1,6 @@
 ![GeoNode](https://raw.githubusercontent.com/GeoNode/documentation/master/about/img/geonode-logo_for_readme.gif "GeoNode")
 ![OSGeo Project](https://www.osgeo.cn/qgis/_static/images/osgeoproject.png)
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/maximilianoPizarro/geonode)
+
 Table of Contents
 =================
 
@@ -15,6 +15,8 @@ Table of Contents
   - [Showcase](#showcase)
   - [Most useful links](#most-useful-links)
   - [Licensing](#licensing)
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/maximilianoPizarro/geonode)
 
 What is GeoNode?
 ----------------

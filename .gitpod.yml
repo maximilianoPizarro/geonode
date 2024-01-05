@@ -5,7 +5,7 @@
 # Learn more from ready-to-use templates: https://www.gitpod.io/docs/introduction/getting-started/quickstart
 
 tasks:
-  - init: docker compose -f docker-compose-dev.yml build -d
+  - init: docker compose -f docker-compose-dev.yml build
     command: docker compose -f docker-compose-dev.yml up -d
 ports:
     - name: geonode

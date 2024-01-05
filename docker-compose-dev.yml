@@ -35,6 +35,8 @@ services:
     container_name: django4${COMPOSE_PROJECT_NAME}
     environment:
       - IS_CELERY=False
+      - GITPOD_WORKSPACE_ID=${GITPOD_WORKSPACE_ID}
+      - GITPOD_WORKSPACE_CLUSTER_HOST=${GITPOD_WORKSPACE_CLUSTER_HOST}      
     entrypoint: ["/usr/src/geonode/entrypoint.sh"]
     command: "uwsgi --ini /usr/src/geonode/uwsgi.ini"
     ports:
@@ -51,6 +53,8 @@ services:
       - django
     environment:
       - IS_CELERY=True
+      - GITPOD_WORKSPACE_ID=${GITPOD_WORKSPACE_ID}
+      - GITPOD_WORKSPACE_CLUSTER_HOST=${GITPOD_WORKSPACE_CLUSTER_HOST}      
     entrypoint: ["/usr/src/geonode/entrypoint.sh"]
     command: "celery-cmd"
 
@@ -62,7 +66,9 @@ services:
     env_file:
       - .env
     environment:
-      - PROXY_BASE_URL=https://8080-maximilianopiza-geonode-nq6mxxmvno5.ws-us107.gitpod.io/geoserver         
+      - PROXY_BASE_URL=https://8080-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}/geoserver
+      - GITPOD_WORKSPACE_ID=${GITPOD_WORKSPACE_ID}
+      - GITPOD_WORKSPACE_CLUSTER_HOST=${GITPOD_WORKSPACE_CLUSTER_HOST}          
     ports:
       - "8080:8080"
     volumes:

@@ -5,9 +5,14 @@
 # Learn more from ready-to-use templates: https://www.gitpod.io/docs/introduction/getting-started/quickstart
 
 tasks:
-  - init: docker compose -f docker-compose-dev.yml up
+  - init: docker compose -f docker-compose-dev.yml build -d
+    command: docker compose -f docker-compose-dev.yml up -d
 ports:
     - name: geonode
       port: 8000
+      onOpen: open-preview
+      visibility: public 
+    - name: geoserver
+      port: 8080
       onOpen: open-preview
       visibility: public 
